@@ -62,4 +62,6 @@ customers = [
             }
         ]
 
-print(customers[0]["cash"])
+x = customers.count(["pets"])
+print(x)
+
