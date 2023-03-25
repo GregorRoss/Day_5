@@ -44,6 +44,14 @@ pet_shop = {
     "name": "Camelot of Pets"
 }
 
+new_pet = {
+            "name": "Bors the Younger",
+            "pet_type": "cat",
+            "breed": "Cornish Rex",
+            "price": 100
+        }
+
+
 customers = [
             {
                 "name": "Alice",
@@ -62,6 +70,25 @@ customers = [
             }
         ]
 
-x = customers.count(["pets"])
-print(x)
+#print(type(customers))
+#print(customers)
+customer = customers[0]
+#print(type(customer))
+print(customer)
+#cust_pet = customer["pets"]
+#print(type(cust_pet))
+#print(cust_pet)
+customer["pets"].append(new_pet)
+#cust_pet.append(new_pet)
+#print(cust_pet)
+print(customer)
+print(new_pet)
+
+valid_purchase = False
+if customer["cash"] >= new_pet["price"]:
+    valid_purchase = True
+else:
+    valid_purchase = False
+
+print(valid_purchase)
 

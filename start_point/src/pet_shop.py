@@ -66,4 +66,19 @@ def  get_customer_pet_count(customer):
     count1 = number.count(["pets"])
     return(count1)
 
+# function to add pet to customer
+def add_pet_to_customer(customer, pet):
+        customer["pets"].append(pet)
+
+# Function to confirm if customer can afford pet
+def customer_can_afford_pet(customer, pet):
+    valid_purchase = False
+    if customer["cash"] >= pet["price"]:
+        valid_purchase = True
+    else:
+        valid_purchase = False
+
+    return(valid_purchase)
+
+
 
