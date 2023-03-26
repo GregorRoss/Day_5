@@ -60,11 +60,7 @@ def remove_customer_cash(customer, cash):
 
 # Function to get customer count
 def  get_customer_pet_count(customer):
-    number = []
-    for cust in customer:
-        number.append(cust)
-    count1 = number.count(["pets"])
-    return(count1)
+    return(len(customer["pets"]))
 
 # function to add pet to customer
 def add_pet_to_customer(customer, pet):
@@ -79,6 +75,18 @@ def customer_can_afford_pet(customer, pet):
         valid_purchase = False
 
     return(valid_purchase)
+
+
+
+# Function sell pet to customer
+def sell_pet_to_customer(pet_shop,pet,customer):
+    if customer_can_afford_pet(customer,pet):
+        remove_customer_cash(customer,pet["price"])
+        add_or_remove_cash(pet_shop,pet["price"])
+        add_pet_to_customer(customer,pet)
+        remove_pet_by_name(pet_shop,pet)
+        increase_pets_sold(pet_shop,1)
+    Else: print("Pet not Found")
 
 
 
