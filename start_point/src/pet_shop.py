@@ -41,10 +41,16 @@ def find_pet_by_name(pet_shop,name):
             return pet
 
 # Function to remove pet by name
+#
+# add the remove using the function above
+#
+# return pet_shop{"pets"}.remove()
+#
 def remove_pet_by_name(pet_shop,name):
-    for pet in pet_shop["pets"]:
-        if pet["name"] == name:
-            del(pet_shop["pets"][3])
+   pet_delete = find_pet_by_name(pet_shop,name)
+   pet_shop['pets'].remove(pet_delete)
+
+
 
 # Function to add pet to stock
 def add_pet_to_stock(pet_shop,new_stock):
@@ -56,7 +62,7 @@ def get_customer_cash(customer):
 
 # Function to remove customer cash
 def remove_customer_cash(customer, cash):
-    customer["cash"] = customer["cash"] - cash
+    customer["cash"] -= cash
 
 # Function to get customer count
 def  get_customer_pet_count(customer):
@@ -80,13 +86,14 @@ def customer_can_afford_pet(customer, pet):
 
 # Function sell pet to customer
 def sell_pet_to_customer(pet_shop,pet,customer):
-    if customer_can_afford_pet(customer,pet):
+    if pet != None and customer_can_afford_pet(customer,pet):
         remove_customer_cash(customer,pet["price"])
         add_or_remove_cash(pet_shop,pet["price"])
         add_pet_to_customer(customer,pet)
-        remove_pet_by_name(pet_shop,pet)
+        remove_pet_by_name(pet_shop,pet["name"])
         increase_pets_sold(pet_shop,1)
     Else: print("Pet not Found")
+
 
 
 

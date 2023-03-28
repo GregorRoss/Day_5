@@ -105,12 +105,11 @@ customers = [
 # print(customers[0]["cash"])
 
 print(pet_shop['pets'])
-name = "Arthur"
-for pet in pet_shop["pets"]:
-    if pet["name"] == name:
-        del pet["name"]
-        del pet["pet_type"]
-        del pet["breed"]
-        del pet["price"]
-print(pet_shop['pets'])
-
+# name = "Arthur"
+# for pet in pet_shop["pets"]:
+#     print(pet.index("name"))
+#     if pet["name"] == name:
+#         del pet["name"]
+# print(pet_shop['pets'])
+pets = pet_shop["pets"]
+print(pets.index)
